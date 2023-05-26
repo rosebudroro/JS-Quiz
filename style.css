@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    text-align: center;
+    padding:20px;
+    font-size: large;
+}
+
+.btn {
+    padding: 1.5rem;
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+}
+
+header {
+    display: flex;
+    align-content: space-between;
+}
+
+.container {
+    margin: auto;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    height: 60vh;
+}
+
+.quest-container {
+    margin: auto;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    height: 60vh;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+

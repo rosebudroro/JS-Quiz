@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#question {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.choices {
+    text-align: left;
+    background-color: purple;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 200px;
+    padding: 10px;
+    
+}
+
+#number {
+    text-align: left;
+}
+
+.quiz {
+    max-width: 600px;
+    margin:auto;
+}
