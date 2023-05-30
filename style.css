@@ -14,6 +14,7 @@ p {
     background-color: purple;
     color: white;
     border-radius: 20px;
+    display: flex;
 }
 
 header {
@@ -31,16 +32,6 @@ header {
     height: 60vh;
 }
 
-.quest-container {
-    margin: auto;
-    padding: 0px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 50vw;
-    height: 60vh;
-}
-
 h1{
     text-align: center;
     font-size: 40px;
@@ -49,3 +40,6 @@ h1{
     margin-top: 50px;
 }
 
+.quiz {
+    display: flex;
+}

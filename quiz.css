@@ -13,14 +13,23 @@ header {
 
 .choices {
     text-align: left;
+    display: flex;
     background-color: purple;
     color: white;
     border-radius: 15px;
     margin-bottom: 10px;
     max-width: 200px;
     padding: 10px;
+    min-width: 50rem;
     
 }
+
+
+/* see what I need to change to put it on the same line, it needs to be different from padding probably */
+.choice {
+    padding: 1rem;
+}
+
 
 #number {
     text-align: left;
@@ -29,4 +38,5 @@ header {
 .quiz {
     max-width: 600px;
     margin:auto;
+ 
 }
