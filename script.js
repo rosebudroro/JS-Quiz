@@ -25,46 +25,46 @@ var questionList = [];
 var questions = [
     {
         question: 'Commonly used data types DO not Include',
-        option1: 'strings',
-        option2: 'booleans',
-        option3: 'alerts',
-        option4: 'numbers',
+        choice1: 'strings',
+        choice2: 'booleans',
+        choice3: 'alerts',
+        choice4: 'numbers',
         answer: 3,
     },
 
     {
         question: 'The condition in an if/else statement is enclosed with ___________.',
-        option1: 'quotes',
-        option2: 'curly brackets',
-        option3: 'parenthesis',
-        option4: 'square brackets',
+        choice1: 'quotes',
+        choice2: 'curly brackets',
+        choice3: 'parenthesis',
+        choice4: 'square brackets',
         answer: 2,
     },
 
     {
         question: 'Arrays in JavaScript can be used to store',
-        option1: 'numbers and strings',
-        option2: 'other arrays',
-        option3: 'booleans',
-        option4: 'all of the above',
+        choice1: 'numbers and strings',
+        choice2: 'other arrays',
+        choice3: 'booleans',
+        choice4: 'all of the above',
         answer: 4,
     },
 
     {
         question: 'String values must be enclosed within _______ when being assigned to variables.',
-        option1: 'commas',
-        option2: 'curly brackets',
-        option3: 'quotes',
-        option4: 'parenthesis',
+        choice1: 'commas',
+        choice2: 'curly brackets',
+        choice3: 'quotes',
+        choice4: 'parenthesis',
         answer: 3,
     },
 
     {
         question: 'A very useful tool used during development and debugging for printing content to the debugger is',
-        option1: 'JavaScript',
-        option2: 'terminal/bash',
-        option3: 'for loops',
-        option4: 'console.log',
+        choice1: 'JavaScript',
+        choice2: 'terminal/bash',
+        choice3: 'for loops',
+        choice4: 'console.log',
         answer: 4,
     }
 ]
@@ -97,27 +97,27 @@ getNewQuestion = () => {
     acceptingAnswers = true
 };
 
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-        if(!acceptingAnswers) return
-        acceptingAnswers= false;
-        var selectedChoice = e.target
-        var selectedAnswer = selectedChoice.dataset['number']
+// choices.forEach(choice => {
+//     choice.addEventListener('click', e => {
+//         if(!acceptingAnswers) return
+//         acceptingAnswers= false;
+//         var selectedChoice = e.target
+        // var selectedAnswer = selectedChoice.dataset['number']
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        // let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        if(classToApply === 'correct') {
-            incrementScore(SCORE_POINTS)
-        }
+        // if(classToApply === 'correct') {
+        //     incrementScore(SCORE_POINTS)
+        // }
 
-        selectedChoice.parentElement.classList.add(classToApply)
+        // selectedChoice.parentElement.classList.add(classToApply)
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply)
-            getNewQuestion()
-        }, 1000)
-    })
-});
+//         setTimeout(() => {
+//             selectedChoice.parentElement.classList.remove(classToApply)
+//             getNewQuestion()
+//         }, 1000)
+//     })
+// });
 
 
 
