@@ -11,7 +11,7 @@ header {
     margin-top: 50px;
 }
 
-.choices {
+.choice-container {
     text-align: left;
     display: flex;
     background-color: purple;
@@ -26,12 +26,12 @@ header {
 
 
 /* see what I need to change to put it on the same line, it needs to be different from padding probably */
-.choice {
+.choice-text {
     padding: 1rem;
 }
 
 
-#number {
+.choice-prefix {
     text-align: left;
 }
 
