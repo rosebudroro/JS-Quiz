@@ -1,19 +1,20 @@
-var startButton =document.querySelector("btn")
+var startButton = document.querySelector("btn")
 var timeEl = document.querySelector(".time")
 var questionsEl = document.querySelector("#question")
-var choicesEl = document.querySelectorAll('#choices')
-var feedbackEl = document.querySelector("feedback");
+var choicesEl = document.querySelector('#choices')
+var feedbackEl = document.querySelector("#feedback");
 
 
 var secondsLeft = 76;
 
 function setTime() {
-    var timerInterval = setInterval(function() {
+    var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = 'Time: ' + secondsLeft;
 
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
+        if (secondsLeft <= 0) {
+            // clearInterval(timerInterval);
+            endQuiz()
         }
     }, 1000);
 }
@@ -53,76 +54,58 @@ var questions = [
     }
 ];
 
-function startGame () {
+function startGame() {
     setTime();
     score = 0;
     getNewQuestion()
 }
 
-getNewQuestion = () => {
-    // if(availableQuestions.length === 0) {
-    //     localStorage.setItem('recentScore', score)
+function endQuiz() {
+    // clearInterval(timerInterval);
+    var finishQuiz = document.getElementById("endQuiz");
+    finishQuiz.removeAttribute("class");
+    var finalScore = document.getElementById("finalScore");
+    finalScore.textContent = time;
+    questionsEl.setAttribute("class", "hide");
+}
 
-    //     return window.location.assign('./highscores.html')
-    // }
-
-    var currentQuestion = questions[questionsIndex]
-    // the question to ask
-
-    question.innerText = currentQuestion.question;
-
+function getNewQuestion() {
+    var currentQuestion = questions[questionsIndex];
+    var promptEl = document.getElementById("question")
+    promptEl.textContent = currentQuestion.question;
+    // clear the choices
     choicesEl.innerHTML = "";
-    currentQuestion.choices.forEach(function(choice, i){
+    currentQuestion.choices.forEach(function (choice, i) {
         var choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("value", choice);
         choiceBtn.textContent = i + 1 + ". " + choice;
         choiceBtn.onclick = questionClick;
         choicesEl.appendChild(choiceBtn);
     });
-};
+}
+
 
 function questionClick() {
     if (this.value !== questions[questionsIndex].answer) {
-      timerEl.textContent = time;
-      feedbackEl.textContent = `Wrong! The correct answer was ${questions[questionsIndex].answer}.`;
-      feedbackEl.style.color = "red";
+        feedbackEl.textContent = 'Wrong!';
+        feedbackEl.style.color = "gray";
     } else {
-      feedbackEl.textContent = "Correct!";
-      feedbackEl.style.color = "green";
+        feedbackEl.textContent = "Correct!";
+        feedbackEl.style.color = "gray";
     }
     feedbackEl.setAttribute("class", "feedback");
-    setTimeout(function() {
-      feedbackEl.setAttribute("class", "feedback hide");
+    setTimeout(function () {
+        feedbackEl.setAttribute("class", "feedback hide");
     }, 2000);
-    currentQuestionIndex++;
-    if (currentQuestionIndex === questions.length) {
-      quizEnd();
+    questionsIndex++;
+    if (questionsIndex === questions.length) {
+        endQuiz();
     } else {
-      getQuestion();
+        getNewQuestion();
     }
 }
 
-// choices.forEach(choice => {
-//     choice.addEventListener('click', e => {
-//         if(!acceptingAnswers) return
-//         acceptingAnswers= false;
-//         var selectedChoice = e.target
-//         var selectedAnswer = selectedChoice.dataset['number']
 
-//         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
-
-//         if(classToApply === 'correct') {
-//             incrementScore(SCORE_POINTS)
-//         }
-
-//         selectedChoice.parentElement.classList.add(classToApply)
-
-//         setTimeout(() => {
-//             selectedChoice.parentElement.classList.remove(classToApply)
-//             getNewQuestion()
-//         }, 1000)
-//     })
-// });
 
 
 
