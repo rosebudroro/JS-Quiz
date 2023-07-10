@@ -18,7 +18,7 @@ button {
     color: white;
     border-radius: 15px;
     margin-bottom: 10px;
-    max-width: 200px;
+    max-width: 100px;
     padding: 10px;
     min-width: 50rem;
     
@@ -44,4 +44,8 @@ button {
 .choice-container:hover {
     background-color: #2A2F33;
     border-color: #2A2F33
+  }
+
+  .hide {
+    display: none;
   }
