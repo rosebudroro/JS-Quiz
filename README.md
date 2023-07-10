@@ -2,25 +2,22 @@
 
 ## Description
 
-For this project,
+For this assignment, I had to build a timed coding quiz using HTML, CSS And Javascript.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
 
 ## Installation
 
-N/A
+Just click start quiz and start making educated guesses!
 
 ## Usage
 
-The screenshots below show the generated password and a console log on the right that shows what the user chose and how the program added each random character to the password depending on what the user chose. 
-
-Screenshot
-
-![alt text](./PasswordGen.png)
-
-Link to Website is below
-https://rosebudroro.github.io/Password-Generator/
-
+This app can help test your javascript skills to prepare you for a job.
 
 ## Credits
 
-N/A
-
+Roxy Osorio
